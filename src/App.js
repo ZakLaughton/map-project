@@ -16,7 +16,7 @@ class App extends Component {
         <MainMap
           googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyDhlOiZW9I8f9t6V5KzLbBbi1LKc-N7C38&v=3'
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `400px` }} />}
+          containerElement={<div style={{ height: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
       </div>
