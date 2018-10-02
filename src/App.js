@@ -36,7 +36,7 @@ class ContactBody extends React.Component {
         };
 
         // Load the Google Maps API
-        const script = document.createElement("script");
+        const script = document.createElement('script');
         const API = 'AIzaSyDhlOiZW9I8f9t6V5KzLbBbi1LKc-N7C38';
         script.src = `https://maps.googleapis.com/maps/api/js?key=${API}&callback=resolveGoogleMapsPromise`;
         script.async = true;
@@ -74,7 +74,7 @@ class ContactBody extends React.Component {
         <h1>Contact</h1>
         <div id="map" style={{width: 400, height: 300}}></div>
       </div>
-    )
+    );
   }
 }
 
