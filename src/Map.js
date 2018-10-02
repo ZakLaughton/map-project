@@ -3,6 +3,16 @@
 import React from 'react';
 
 class Map extends React.Component {
+  state = {
+    locations: [
+      {title: 'Baked \'n Sconed', location: {lat: 30.5427284, lng: -97.55608029999999}},
+      {title: 'Rio Grande Tex Mex', location: {lat: 30.5431313, lng: -97.55684219999999}},
+      {title: 'The Downtown Hall of Fame', location: {lat: 30.5442963, lng: -97.54738239999999}},
+      {title: 'Hit the Spot Cafe', location: {lat: 30.5422514, lng: -97.5454403}},
+      {title: 'Snuffy\'s', location: {lat: 30.5431014, lng: -97.54771359999999}},
+      {title: 'Texan Cafe', location: {lat: 30.5443816, lng: -97.54751309999999}}
+    ]
+  }
   getGoogleMaps() {
   // If we haven't already defined the promise, define it
     if (!this.googleMapsPromise) {
@@ -34,12 +44,25 @@ class Map extends React.Component {
   }
 
   componentDidMount() {
+    const { locations } = this.state;
     // Once the Google Maps API has finished loading, initialize the map
     this.getGoogleMaps().then((google) => {
       const map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: {lat: 30.275227, lng: -97.746078}
       });
+      locations.map((location, index) => {
+        let position = location.location;
+        let title = location.title;
+
+        let marker = new google.maps.Marker({
+          position: position,
+          title: title,
+          map: map,
+          animation: google.maps.Animation.DROP,
+          id: index
+        });
+      })
     });
   }
 
@@ -47,6 +70,7 @@ class Map extends React.Component {
     return (
       <div className='map-container'>
         <div id='map' style={{width: '100%', height: '100%'}}></div>
+        {}
       </div>
     );
   }
