@@ -36,10 +36,9 @@ class Map extends React.Component {
   componentDidMount() {
     // Once the Google Maps API has finished loading, initialize the map
     this.getGoogleMaps().then((google) => {
-      const uluru = {lat: -25.363, lng: 131.044};
       const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: uluru
+        zoom: 10,
+        center: {lat: 30.275227, lng: -97.746078}
       });
     });
   }
