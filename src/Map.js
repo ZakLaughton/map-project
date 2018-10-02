@@ -48,8 +48,8 @@ class Map extends React.Component {
     // Once the Google Maps API has finished loading, initialize the map
     this.getGoogleMaps().then((google) => {
       const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
-        center: {lat: 30.275227, lng: -97.746078}
+        zoom: 16,
+        center: {lat: 30.542471, lng: -97.5516146}
       });
       locations.map((location, index) => {
         let position = location.location;
@@ -70,7 +70,6 @@ class Map extends React.Component {
     return (
       <div className='map-container'>
         <div id='map' style={{width: '100%', height: '100%'}}></div>
-        {}
       </div>
     );
   }
