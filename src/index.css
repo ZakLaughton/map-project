@@ -14,3 +14,20 @@ html, body, #root, .App {
   margin: 0;
   padding: 0;
 }
+
+.map-container {
+  position: absolute;
+  right: 0px;
+  left: 300px;
+}
+
+.sidebar {
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: blue;
+  padding-top: 20px;
+}
