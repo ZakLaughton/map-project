@@ -1,5 +1,3 @@
-/* global google */
-
 import React, { Component } from 'react';
 import './App.css';
 import Map from './Map';

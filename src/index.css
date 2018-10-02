@@ -4,9 +4,13 @@ body {
   font-family: sans-serif;
 }
 
-html,
-body,
-div {
-  width: 100%;
+
+.map-container {
   height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body, #root, .App {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
