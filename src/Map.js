@@ -239,17 +239,15 @@ class Map extends React.Component {
         center: {lat: 30.542471, lng: -97.5516146},
         styles: this.state.styles
       });
-      restaurants.map((location, index) => {
-        let position = location.location;
-        let title = location.title;
-
-        let marker = new google.maps.Marker({
-          position: position,
-          title: title,
-          map: map,
-          animation: google.maps.Animation.DROP,
-          id: index
-        });
+      restaurants.map((restaurant, index) => {
+        if (restaurant.showMarker) {
+          let marker = new google.maps.Marker({
+            position: restaurant.location,
+            title: restaurant.title,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            id: index
+        })};
       })
     });
   }
