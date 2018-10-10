@@ -232,18 +232,3 @@ class Map extends React.Component {
 }
 
 export default Map;
-
-/* 
-      restaurants.map((restaurant, index) => {
-        if (restaurant.showMarker) {
-          let marker = new google.maps.Marker({
-            position: restaurant.location,
-            title: restaurant.title,
-            map: map,
-            animation: google.maps.Animation.DROP,
-            id: index
-        })};
-      })
-    });
-  }
-*/
