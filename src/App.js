@@ -35,10 +35,6 @@ class App extends Component {
     return false;
   }
 
-  hideAllMarkers = () => {
-    this.setState({ showingRestaurants: [] })
-  }
-
   componentDidMount() {
     // Show all restaurant markers on map at first load
     let showingRestaurants = this.state.restaurants
