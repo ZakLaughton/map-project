@@ -33,12 +33,21 @@ class App extends Component {
     ]
   }
 
+  hideAllMarkers = () => {
+    const newList = this.state.restaurants
+      .map(restaurant => {
+        restaurant.showMarker = false;
+        return restaurant;
+      });
+    this.setState({ restaurants: newList })
+  }
+
 
   render() {
     const { restaurants, styles } = this.state
     return (
       <div className="App">
-        <Sidebar />
+        <Sidebar hideAllMarkers={ this.hideAllMarkers }/>
         <Map restaurants={ restaurants } />
       </div>
     );
