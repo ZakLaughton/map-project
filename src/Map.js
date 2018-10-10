@@ -203,8 +203,9 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     defaultCenter={{lat: 30.542471, lng: -97.5516146}}
     defaultOptions={{ styles }}
   >
-    {props.showingRestaurants &&
-     props.showingRestaurants
+    {props.restaurants &&
+     props.restaurants
+       .filter(restaurant => restaurant.isShowing)
        .map((marker, index) =>
          <Marker
           key={index}
@@ -226,7 +227,7 @@ class Map extends React.Component {
     return(
       <MyMapComponent
         isMarkerShown
-        showingRestaurants = { this.props.showingRestaurants }
+        restaurants = { this.props.restaurants }
         handleClick = {this.props.handleClick}
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDhlOiZW9I8f9t6V5KzLbBbi1LKc-N7C38"
         loadingElement={<div style={{ height: '100%' }} />}

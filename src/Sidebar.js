@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sidebar = ({ updateSearchResults, restaurants, isShowingRestaurant, handleClick }) => (
+const Sidebar = ({ updateSearchResults, restaurants, isShowing, handleClick }) => (
   <div className='sidebar'>
     <h1>SIDEBAR</h1>
     <input type="text" id="restaurantFilter" onInput={(event) => updateSearchResults(event.target.value)}
@@ -9,7 +9,7 @@ const Sidebar = ({ updateSearchResults, restaurants, isShowingRestaurant, handle
       { restaurants.map((restaurant, index) => (
         <li
           key={ index }
-          className={ (isShowingRestaurant(restaurant.title) ? (restaurant.isSelected ? 'selected' : '') : 'inactive')}
+          className={ (restaurant.isShowing) ? (restaurant.isSelected ? 'selected' : '') : 'inactive'}
           onClick={() => handleClick(restaurant)}>
           {restaurant.title}
         </li>
