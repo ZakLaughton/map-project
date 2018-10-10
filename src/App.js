@@ -43,31 +43,21 @@ class App extends Component {
     this.setState({ showingRestaurants: showingRestaurants })
   }
 
-/*
   updateSearchResults = (query) => {
+    let upperQuery = query.toUpperCase()
     const results = this.state.restaurants
-      .filter(restaurant => {
-
-      });
-    BooksAPI.search(query).then((results) => {
-        let shelvedResults;
-
-        if (results && results.length > 0) {
-            shelvedResults = this.shelfResults(results)
-        }
-
-        this.setState({
-            showingBooks: shelvedResults
-        })
-    })
-*/
+      .filter(restaurant => (
+        restaurant.title.toUpperCase().indexOf(upperQuery) > -1
+      ));
+    this.setState({ showingRestaurants: results })
+  }
 
   render() {
     const { restaurants, showingRestaurants } = this.state
     return (
       <div className="App">
         <Sidebar
-          hideAllMarkers={ this.hideAllMarkers }
+          updateSearchResults={ this.updateSearchResults }
           restaurants={ restaurants }
           showingRestaurants={ showingRestaurants }/>
         <Map showingRestaurants={ showingRestaurants } />

@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Sidebar = ({ hideAllMarkers, restaurants, showingRestaurants }) => (
+const Sidebar = ({ updateSearchResults, restaurants, showingRestaurants }) => (
   <div className='sidebar'>
     <h1>SIDEBAR</h1>
-    <input id="hide-markers" type="button" value="Hide Markers" onClick={hideAllMarkers}></input>
+    <input type="text" id="restaurantFilter" onInput={(event) => updateSearchResults(event.target.value)}
+ placeholder="Filter restaurants..." title="Type in a name"></input>
     <ul>
       { restaurants.map((restaurant, index) => (
         <li key={ index }>{restaurant.title}</li>
