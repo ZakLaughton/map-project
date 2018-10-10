@@ -1,5 +1,5 @@
 import React from 'react';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 const styles = [
   {
@@ -205,9 +205,11 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   >
     {props.showingRestaurants &&
      props.showingRestaurants
-       .map((marker, index) =>
-         <Marker key={index} position={ marker.location }/>
-       )}
+      .map((marker, index) =>
+        <Marker key={index} position={ marker.location }>
+          <InfoWindow><p>Hello</p></InfoWindow>
+        </Marker>
+    )}
   </GoogleMap>
 ));
 
