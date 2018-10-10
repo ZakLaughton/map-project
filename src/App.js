@@ -54,6 +54,11 @@ class App extends Component {
     this.setState({ showingRestaurants: results })
   }
 
+  openInfoWindow = (restaurant) => {
+    restaurant.isSelected = true;
+    this.setState({restaurants: Object.assign(this.state.restaurants, restaurant)})
+  }
+
   render() {
     const { restaurants, showingRestaurants } = this.state
     return (
@@ -63,7 +68,9 @@ class App extends Component {
           isShowingRestaurant={ this.isShowingRestaurant }
           restaurants={ restaurants }
           showingRestaurants={ showingRestaurants }/>
-        <Map showingRestaurants={ showingRestaurants } />
+        <Map
+          showingRestaurants={ showingRestaurants }
+          openInfoWindow={ this.openInfoWindow }/>
       </div>
     );
   }
