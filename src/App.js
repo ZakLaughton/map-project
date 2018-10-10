@@ -39,7 +39,7 @@ class App extends Component {
     return (
       <div className="App">
         <Sidebar />
-        <Map restaurants={ restaurants } styles = { styles }/>
+        <Map restaurants={ restaurants } />
       </div>
     );
   }
