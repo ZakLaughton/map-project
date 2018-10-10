@@ -205,7 +205,6 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   >
     {props.showingRestaurants &&
      props.showingRestaurants
-       .filter(restaurant => restaurant.showMarker)
        .map((marker, index) =>
          <Marker key={index} position={ marker.location }/>
        )}
