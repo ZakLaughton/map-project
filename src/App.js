@@ -50,7 +50,16 @@ class App extends Component {
     this.setState({ showingRestaurants: results })
   }
 
+  unselectAllRestaurants = () => {
+    let unselectedRestaurants = this.state.restaurants.map((restaurant) => {
+      restaurant.isSelected = false;
+      return restaurant;
+    })
+    this.setState({ restaurants: unselectedRestaurants })
+  }
+
   openInfoWindow = (restaurant) => {
+    this.unselectAllRestaurants()
     restaurant.isSelected = true;
     this.setState({restaurants: Object.assign(this.state.restaurants, restaurant)})
   }
