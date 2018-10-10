@@ -24,6 +24,10 @@ li.inactive {
   color: gray;
 }
 
+li.selected {
+  color: yellow;
+}
+
 .map-container {
   position: absolute;
   right: 0px;

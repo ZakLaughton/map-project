@@ -9,7 +9,8 @@ const Sidebar = ({ updateSearchResults, restaurants, isShowingRestaurant }) => (
       { restaurants.map((restaurant, index) => (
         <li
           key={ index }
-          className={ isShowingRestaurant(restaurant.title) ? null : 'inactive' }>
+          className={ (isShowingRestaurant(restaurant.title) ? '' : 'inactive') + ' ' +
+                      (restaurant.isSelected ? 'selected' : '') }>
           {restaurant.title}
         </li>
       ))}
