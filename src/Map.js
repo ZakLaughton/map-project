@@ -205,11 +205,11 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   >
     {props.showingRestaurants &&
      props.showingRestaurants
-      .map((marker, index) =>
-        <Marker key={index} position={ marker.location }>
-          <InfoWindow><p>Hello</p></InfoWindow>
-        </Marker>
-    )}
+       .map((marker, index) =>
+         <Marker key={index} position={ marker.location }>
+           <InfoWindow><p>Hello</p></InfoWindow>
+         </Marker>
+       )}
   </GoogleMap>
 ));
 
