@@ -63,11 +63,14 @@ class App extends Component {
 */
 
   render() {
-    const { showingRestaurants } = this.state
+    const { restaurants, showingRestaurants } = this.state
     return (
       <div className="App">
-        <Sidebar hideAllMarkers={ this.hideAllMarkers }/>
-        <Map restaurants={ showingRestaurants } />
+        <Sidebar
+          hideAllMarkers={ this.hideAllMarkers }
+          restaurants={ restaurants }
+          showingRestaurants={ showingRestaurants }/>
+        <Map showingRestaurants={ showingRestaurants } />
       </div>
     );
   }
