@@ -213,7 +213,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
           onClick={() => props.openInfoWindow(marker)}>
            {marker.isSelected === true && (
             <InfoWindow>
-              <p>Hello</p>
+              <h2>{marker.title}</h2>
            </InfoWindow>)}
          </Marker>
        )}
