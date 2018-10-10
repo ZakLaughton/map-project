@@ -7,17 +7,23 @@ class App extends Component {
   state = {
     restaurants: [
       {title: 'Baked \'n Sconed',
-       location: {lat: 30.5427284, lng: -97.55608029999999}},
+       location: {lat: 30.5427284, lng: -97.55608029999999},
+       isSelected: false},
       {title: 'Rio Grande Tex Mex',
-       location: {lat: 30.5431313, lng: -97.55684219999999}},
+       location: {lat: 30.5431313, lng: -97.55684219999999},
+       isSelected: false},
       {title: 'The Downtown Hall of Fame',
-       location: {lat: 30.5442963, lng: -97.54738239999999}},
+       location: {lat: 30.5442963, lng: -97.54738239999999},
+       isSelected: false},
       {title: 'Hit the Spot Cafe',
-       location: {lat: 30.5422514, lng: -97.5454403}},
+       location: {lat: 30.5422514, lng: -97.5454403},
+       isSelected: false},
       {title: 'Snuffy\'s',
-       location: {lat: 30.5431014, lng: -97.54771359999999}},
+       location: {lat: 30.5431014, lng: -97.54771359999999},
+       isSelected: false},
       {title: 'Texan Cafe',
-       location: {lat: 30.5443816, lng: -97.54751309999999}}
+       location: {lat: 30.5443816, lng: -97.54751309999999},
+       isSelected: false}
     ],
     showingRestaurants: []
   }

@@ -207,7 +207,10 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
      props.showingRestaurants
        .map((marker, index) =>
          <Marker key={index} position={ marker.location }>
-           <InfoWindow><p>Hello</p></InfoWindow>
+           {marker.isSelected === true && (
+            <InfoWindow>
+              <p>Hello</p>
+           </InfoWindow>)}
          </Marker>
        )}
   </GoogleMap>
