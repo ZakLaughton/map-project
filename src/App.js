@@ -22,6 +22,13 @@ class App extends Component {
     showingRestaurants: []
   }
 
+  isShowingRestaurant = (restaurantTitle) => {
+    for(let restaurant of this.state.showingRestaurants) {
+      if (restaurantTitle === restaurant.title) {return true;}
+    }
+    return false;
+  }
+
   hideAllMarkers = () => {
     this.setState({ showingRestaurants: [] })
   }
@@ -47,6 +54,7 @@ class App extends Component {
       <div className="App">
         <Sidebar
           updateSearchResults={ this.updateSearchResults }
+          isShowingRestaurant={ this.isShowingRestaurant }
           restaurants={ restaurants }
           showingRestaurants={ showingRestaurants }/>
         <Map showingRestaurants={ showingRestaurants } />

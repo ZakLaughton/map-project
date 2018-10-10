@@ -20,6 +20,10 @@ ul {
   padding: 0px;
 }
 
+li.inactive {
+  color: gray;
+}
+
 .map-container {
   position: absolute;
   right: 0px;
