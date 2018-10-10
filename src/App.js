@@ -58,7 +58,7 @@ class App extends Component {
     this.setState({ restaurants: unselectedRestaurants })
   }
 
-  openInfoWindow = (restaurant) => {
+  handleClick = (restaurant) => {
     this.unselectAllRestaurants()
     restaurant.isSelected = true;
     this.setState({restaurants: Object.assign(this.state.restaurants, restaurant)})
@@ -72,10 +72,11 @@ class App extends Component {
           updateSearchResults={ this.updateSearchResults }
           isShowingRestaurant={ this.isShowingRestaurant }
           restaurants={ restaurants }
-          showingRestaurants={ showingRestaurants }/>
+          showingRestaurants={ showingRestaurants }
+          handleClick={ this.handleClick }/>
         <Map
           showingRestaurants={ showingRestaurants }
-          openInfoWindow={ this.openInfoWindow }/>
+          handleClick={ this.handleClick }/>
       </div>
     );
   }

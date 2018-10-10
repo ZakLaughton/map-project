@@ -210,7 +210,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
           key={index}
           position={ marker.location }
           title={ marker.title }
-          onClick={() => props.openInfoWindow(marker)}>
+          onClick={() => props.handleClick(marker)}>
            {marker.isSelected === true && (
             <InfoWindow>
               <h2>{marker.title}</h2>
@@ -227,7 +227,7 @@ class Map extends React.Component {
       <MyMapComponent
         isMarkerShown
         showingRestaurants = { this.props.showingRestaurants }
-        openInfoWindow = {this.props.openInfoWindow}
+        handleClick = {this.props.handleClick}
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDhlOiZW9I8f9t6V5KzLbBbi1LKc-N7C38"
         loadingElement={<div style={{ height: '100%' }} />}
         containerElement={<div style={{ 
