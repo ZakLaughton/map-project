@@ -30,25 +30,44 @@ class App extends Component {
        location: {lat: 30.5443816, lng: -97.54751309999999},
        type: 'cafe',
        showMarker: true}
-    ]
+    ],
+    showingRestaurants: []
   }
 
   hideAllMarkers = () => {
-    const newList = this.state.restaurants
-      .map(restaurant => {
-        restaurant.showMarker = false;
-        return restaurant;
-      });
-    this.setState({ restaurants: newList })
+    this.setState({ showingRestaurants: [] })
   }
 
+  componentDidMount() {
+    let showingRestaurants = this.state.restaurants.filter(restaurant => restaurant.showMarker === true)
+    this.setState({ showingRestaurants: showingRestaurants })
+  }
+
+/*
+  updateSearchResults = (query) => {
+    const results = this.state.restaurants
+      .filter(restaurant => {
+
+      });
+    BooksAPI.search(query).then((results) => {
+        let shelvedResults;
+
+        if (results && results.length > 0) {
+            shelvedResults = this.shelfResults(results)
+        }
+
+        this.setState({
+            showingBooks: shelvedResults
+        })
+    })
+*/
 
   render() {
-    const { restaurants, styles } = this.state
+    const { showingRestaurants } = this.state
     return (
       <div className="App">
         <Sidebar hideAllMarkers={ this.hideAllMarkers }/>
-        <Map restaurants={ restaurants } />
+        <Map restaurants={ showingRestaurants } />
       </div>
     );
   }
