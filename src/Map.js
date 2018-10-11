@@ -201,7 +201,10 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   <GoogleMap
     defaultZoom={16}
     defaultCenter={{lat: 30.542471, lng: -97.5516146}}
-    defaultOptions={{ styles }}
+    defaultOptions={{
+      styles,
+      mapTypeControl: false,
+      fullscreenControl: false }}
   >
     {props.restaurants &&
      props.restaurants
