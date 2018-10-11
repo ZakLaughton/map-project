@@ -23,6 +23,11 @@ ul {
 li {
   color: orange;
 }
+
+li:hover {
+  cursor: pointer;
+}
+
 li.inactive {
   color: gray;
 }
