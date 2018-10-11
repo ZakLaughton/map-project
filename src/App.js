@@ -41,7 +41,8 @@ class App extends Component {
         if (restaurant.title.toUpperCase().indexOf(upperQuery) > -1) {
           restaurant.isShowing = true
         } else {
-          restaurant.isShowing = false
+          restaurant.isShowing = false;
+          restaurant.isSelected = false;
         }
       });
     this.setState({ showingRestaurants: results })
