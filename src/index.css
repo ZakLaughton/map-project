@@ -20,6 +20,9 @@ ul {
   padding: 0px;
 }
 
+li {
+  color: orange;
+}
 li.inactive {
   color: gray;
 }
@@ -41,6 +44,11 @@ li.selected {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: blue;
-  padding-top: 20px;
+  background-color: #1f1f1f;
+  padding-top: 5px;
+}
+
+.sidebar h1 {
+  color: orange;
+  margin: 0 0 5px 0;
 }

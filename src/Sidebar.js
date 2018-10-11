@@ -2,7 +2,7 @@ import React from 'react';
 
 const Sidebar = ({ updateSearchResults, restaurants, isShowing, handleClick }) => (
   <div className='sidebar'>
-    <h1>SIDEBAR</h1>
+    <h1>Hutto Restaurants</h1>
     <input type="text" id="restaurantFilter" onInput={(event) => updateSearchResults(event.target.value)}
  placeholder="Filter restaurants..." title="Type in a name"></input>
     <ul>
