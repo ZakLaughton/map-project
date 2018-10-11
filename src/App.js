@@ -56,8 +56,12 @@ class App extends Component {
   }
 
   handleClick = (restaurant) => {
-    this.unselectAllRestaurants()
-    restaurant.isSelected = true;
+    if (restaurant.isSelected) {
+      restaurant.isSelected = false;
+    } else {
+      this.unselectAllRestaurants()
+      restaurant.isSelected = true;
+    }
     this.setState({restaurants: Object.assign(this.state.restaurants, restaurant)})
   }
 
