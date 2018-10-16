@@ -46,25 +46,25 @@ class App extends Component {
     showingRestaurants: []
   }
 
-  getRestaurantPhoto(restaurantID) {
+  setRestaurantPhotoIDs(restaurantID) {
     const clientID = 'SO0U3NLYRUSUMZ2IOLFIEWD2ZUNMIRCYJCC4C4ZYJRHMVWXV'
     const clientSecret = 'IL1XMEUV2KPD2134P50XWQXNS4H34CN4FWROMZ2TBFRZQDXJ'
-    const APIURL = `https://api.foursquare.com/v2/venues/${restaurantID}?client_id=${clientID}&client_secret=${clientSecret}&v=20180323`
-    fetch(APIURL)
-      .then((response) => response.json())
-      .then(data => {
-        const venue = data.response.venue;
-        const photoID = venue.bestPhoto.id;
-        console.log(photoID)
-      }).catch(function() {
-        console.log('FAIL!', data => data);
+    this.state.restaurants.map(restaurant => {
+      const APIURL = `https://api.foursquare.com/v2/venues/${restaurant.locationID}?client_id=${clientID}&client_secret=${clientSecret}&v=20180323`
+      fetch(APIURL)
+        .then((response) => response.json())
+        .then(data => {
+          let photoID = data.response.venue.bestPhoto.id;
+          restaurant.photoID = photoID;
+          this.setState({restaurants: Object.assign(this.state.restaurants, restaurant)})
+        }).catch(function() {
+          console.log('FAIL!', data => data);
+      })
     });
   }
 
   componentDidMount() {
-    this.state.restaurants.map((restaurant) => {
-      this.getRestaurantPhoto(restaurant.locationID)
-    })
+    this.setRestaurantPhotoIDs();
   }
 
   updateSearchResults = (query) => {
