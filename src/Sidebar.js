@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sidebar = ({ updateSearchResults, restaurants, isShowing, handleClick }) => (
+const Sidebar = ({ updateSearchResults, restaurants, handleClick }) => (
   <div className='sidebar'>
     <h1>Hutto Restaurants</h1>
     <input type="text" id="restaurantFilter" onInput={(event) => updateSearchResults(event.target.value)}

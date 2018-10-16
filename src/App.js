@@ -42,8 +42,7 @@ class App extends Component {
        photoID: '',
        isShowing: true,
        isSelected: false}
-    ],
-    showingRestaurants: []
+    ]
   }
 
   setRestaurantPhotoIDs(restaurantID) {
@@ -69,16 +68,17 @@ class App extends Component {
 
   updateSearchResults = (query) => {
     let upperQuery = query.toUpperCase()
-    const results = this.state.restaurants
-      .map(restaurant => {
+    let results = this.state.restaurants
+      .map((restaurant) => {
         if (restaurant.title.toUpperCase().indexOf(upperQuery) > -1) {
           restaurant.isShowing = true
         } else {
           restaurant.isShowing = false;
           restaurant.isSelected = false;
         }
+        return restaurant;
       });
-    this.setState({ showingRestaurants: results })
+    this.setState({ restaurants: results })
   }
 
   unselectAllRestaurants = () => {
@@ -104,9 +104,8 @@ class App extends Component {
     return (
       <div className="App">
         <Sidebar
-          updateSearchResults={ this.updateSearchResults }
+          updateSearchResults={ this.updateSearchResults.bind(this) }
           restaurants={ restaurants }
-          showingRestaurants={ showingRestaurants }
           handleClick={ this.handleClick }/>
         <Map
           restaurants={ restaurants }
