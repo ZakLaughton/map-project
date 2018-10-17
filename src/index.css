@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+.App {
+  display: grid;
+  grid-template-columns: 300px 3fr;
+}
 
 .map-container {
   height: 100%;
@@ -36,19 +40,8 @@ li.selected {
   color: yellow;
 }
 
-.map-container {
-  position: absolute;
-  right: 0px;
-  left: 300px;
-}
 
 .sidebar {
-  width: 300px;
-  height: 100%;
-  position: fixed;
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
   background-color: #1f1f1f;
   padding-top: 5px;
 }
@@ -56,4 +49,15 @@ li.selected {
 .sidebar h1 {
   color: orange;
   margin: 0 0 5px 0;
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    grid-template: 70% minmax(min-content, min-content) / 1fr;
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
 }

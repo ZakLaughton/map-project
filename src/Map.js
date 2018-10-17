@@ -237,11 +237,7 @@ class Map extends React.Component {
         handleClick = {this.props.handleClick}
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDhlOiZW9I8f9t6V5KzLbBbi1LKc-N7C38"
         loadingElement={<div style={{ height: '100%' }} />}
-        containerElement={<div style={{ 
-          height: '100%',
-          position: 'absolute',
-          right: '0px',
-          left: '300px' }} />}
+        containerElement={<div style={{ height: '100%' }} className='map-loader' />}
         mapElement={<div style={{ height: '100%' }} />}
       />
     );
