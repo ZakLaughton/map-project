@@ -8,25 +8,25 @@ class App extends Component {
     restaurants: [
       {title: 'Baked \'n Sconed',
        location: {lat: 30.5427284, lng: -97.55608029999999},
-       locationID: '4c0ac9687e3fc9281f44f482',
+       locationID: '50a51f68e4b052be235c6b48',
        photoURL: '',
        isShowing: true,
        isSelected: false},
       {title: 'Rio Grande Tex Mex',
        location: {lat: 30.5431313, lng: -97.55684219999999},
-       locationID: '4c0ac9687e3fc9281f44f482',
+       locationID: '4b807b5df964a520737630e3',
        photoURL: '',
        isShowing: true,
        isSelected: false},
       {title: 'The Downtown Hall of Fame',
        location: {lat: 30.5442963, lng: -97.54738239999999},
-       locationID: '4c0ac9687e3fc9281f44f482',
+       locationID: '4eed4d025c5c794ad209d1fc',
        photoURL: '',
        isShowing: true,
        isSelected: false},
       {title: 'Hit the Spot Cafe',
        location: {lat: 30.5422514, lng: -97.5454403},
-       locationID: '4c0ac9687e3fc9281f44f482',
+       locationID: '59b438210d173f341f23996d',
        photoURL: '',
        isShowing: true,
        isSelected: false},
@@ -38,7 +38,7 @@ class App extends Component {
        isSelected: false},
       {title: 'Texan Cafe',
        location: {lat: 30.5443816, lng: -97.54751309999999},
-       locationID: '4c0ac9687e3fc9281f44f482',
+       locationID: '4b3fbf55f964a520ccad25e3',
        photoID: '',
        isShowing: true,
        isSelected: false}
@@ -54,7 +54,7 @@ class App extends Component {
         .then((response) => response.json())
         .then(data => {
           let photo = data.response.venue.bestPhoto;
-          let photoURL = photo.prefix + 'height300' + photo.suffix
+          let photoURL = photo.prefix + 'height100' + photo.suffix
           restaurant.photoURL = photoURL;
           this.setState({restaurants: Object.assign(this.state.restaurants, restaurant)})
         }).catch(function() {
