@@ -217,7 +217,10 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
            onClick={() => props.handleClick(marker)}>
            {marker.isSelected === true && (
              <InfoWindow>
-               <h2>{marker.title}</h2>
+               <div>
+                <h2>{marker.title}</h2>
+                <img src={ marker.photoURL }></img>
+               </div>
              </InfoWindow>)}
          </Marker>
        )}
