@@ -214,7 +214,8 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
            key={index}
            position={ marker.location }
            title={ marker.title }
-           onClick={() => props.handleClick(marker)}>
+           onClick={() => props.handleClick(marker)}
+           defaultAnimation= {window.google.maps.Animation.DROP}>
            {marker.isSelected === true && (
              <InfoWindow>
                <div>
