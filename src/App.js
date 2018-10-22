@@ -72,7 +72,7 @@ class App extends Component {
     let results = this.state.restaurants
       .map((restaurant) => {
         if (restaurant.title.toUpperCase().indexOf(upperQuery) > -1) {
-          restaurant.isShowing = true
+          restaurant.isShowing = true;
         } else {
           restaurant.isShowing = false;
           restaurant.isSelected = false;
