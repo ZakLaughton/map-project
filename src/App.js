@@ -48,7 +48,7 @@ class App extends Component {
   setRestaurantPhotoURLs(restaurantID) {
     const clientID = 'SO0U3NLYRUSUMZ2IOLFIEWD2ZUNMIRCYJCC4C4ZYJRHMVWXV'
     const clientSecret = 'IL1XMEUV2KPD2134P50XWQXNS4H34CN4FWROMZ2TBFRZQDXJ'
-    this.state.restaurants.map(restaurant => {
+    const photoRestaurants = this.state.restaurants.map(restaurant => {
       const APIURL = `https://api.foursquare.com/v2/venues/${restaurant.locationID}?client_id=${clientID}&client_secret=${clientSecret}&v=20180323`
       fetch(APIURL)
         .then((response) => response.json())
@@ -57,12 +57,13 @@ class App extends Component {
           if (photo) {
             let photoURL = photo.prefix + 'height100' + photo.suffix
             restaurant.photoURL = photoURL;
-            this.setState({restaurants: Object.assign(this.state.restaurants, restaurant)})
           }
         }).catch(function(error) {
           console.log(error);
         })
-    });
+      return restaurant;
+      });
+    this.setState({restaurants: Object.assign(this.state.restaurants, photoRestaurants)})
   }
 
   componentDidMount() {
@@ -103,7 +104,7 @@ class App extends Component {
   }
 
   render() {
-    const { restaurants, showingRestaurants } = this.state
+    const { restaurants } = this.state
     return (
       <div className="App">
         <Sidebar
