@@ -54,12 +54,14 @@ class App extends Component {
         .then((response) => response.json())
         .then(data => {
           let photo = data.response.venue.bestPhoto;
-          let photoURL = photo.prefix + 'height100' + photo.suffix
-          restaurant.photoURL = photoURL;
-          this.setState({restaurants: Object.assign(this.state.restaurants, restaurant)})
-        }).catch(function() {
-          console.log('FAIL!', data => data);
-      })
+          if (photo) {
+            let photoURL = photo.prefix + 'height100' + photo.suffix
+            restaurant.photoURL = photoURL;
+            this.setState({restaurants: Object.assign(this.state.restaurants, restaurant)})
+          }
+        }).catch(function(error) {
+          console.log(error);
+        })
     });
   }
 
