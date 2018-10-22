@@ -220,8 +220,8 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
            {marker.isSelected === true && (
              <InfoWindow>
                <div>
-                <h2>{marker.title}</h2>
-                <img src={ marker.photoURL }></img>
+                <h2>{ marker.title }</h2>
+                <img src={ marker.photoURL } alt={ `${marker.title} from Foursquare` }></img>
                </div>
              </InfoWindow>)}
          </Marker>
@@ -236,7 +236,7 @@ class Map extends React.Component {
       <MyMapComponent
         isMarkerShown
         restaurants = { this.props.restaurants }
-        handleClick = {this.props.handleClick}
+        handleClick = { this.props.handleClick }
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDhlOiZW9I8f9t6V5KzLbBbi1LKc-N7C38"
         loadingElement={<div style={{ height: '100%' }} />}
         containerElement={<div style={{ height: '100%' }} className='map-loader' />}
