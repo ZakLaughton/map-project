@@ -231,9 +231,22 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 ));
 
 class Map extends React.Component {
+  state = {
+    mapsError: false
+  }
+
+  componentDidMount() {
+    window.gm_authFailure = () => {
+      this.setState({ mapsError: true })
+      console.log(this.state.mapsError)
+    };
+  }
 
   render() {
+    const { mapsError } = this.state
     return(
+      <div>
+      { mapsError === true && <MapsError /> }
       <MyMapComponent
         isMarkerShown
         restaurants = { this.props.restaurants }
@@ -243,8 +256,13 @@ class Map extends React.Component {
         containerElement={<div style={{ height: '100%' }} className='map-loader' />}
         mapElement={<div style={{ height: '100%' }} />}
       />
+      </div>
     );
   }
+}
+
+function MapsError() {
+  return <div className='maps-error'>There was an error loading the Google map.</div>
 }
 
 export default Map;
