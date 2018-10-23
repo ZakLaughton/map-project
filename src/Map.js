@@ -2,6 +2,7 @@ import React from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 const styles = [
+  // Based on style built at https://mapstyle.withgoogle.com/
   {
     'elementType': 'geometry',
     'stylers': [

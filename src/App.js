@@ -70,6 +70,9 @@ class App extends Component {
     this.setRestaurantPhotoURLs();
   }
 
+  /**
+   * Filters locations based on a given query
+   */
   updateSearchResults = (query) => {
     let upperQuery = query.toUpperCase()
     let results = this.state.restaurants
