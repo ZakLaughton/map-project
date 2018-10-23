@@ -2,10 +2,10 @@
 
 This is a web application that shows a list of restaurants in the Hutto, Texas area. You can filter restaurants using a text search, and select a restaurant to show an info window with the restaurant name along with a photo retrieved using the Foursquare API.
 
-### Prerequisites
+## Prerequisites
 This project requires node package manager.
 
-### Installing
+## Installing
 1. Install node dependencies
     ```
     npm install
@@ -24,6 +24,10 @@ Once started, the application will be served at ```localhost:3000```
 ## Built With
 * [Create React App](https://github.com/facebook/create-react-app)
 * [React Google Maps](https://github.com/tomchentw/react-google-maps)
+
+## Data pulled in from...
+* [Google Maps API](https://developers.google.com/maps/documentation/)
+* [Foursquare API](https://developer.foursquare.com/)
 
 ## Authors
 * [**Zak Laughton**](https://github.com/zlaughton)
