@@ -11,7 +11,7 @@ const Sidebar = ({ updateSearchResults, restaurants, handleClick }) => (
           key={ index }
           className={ (restaurant.isShowing) ? (restaurant.isSelected ? 'selected' : '') : 'inactive'}
           role='button'
-          tabindex='0'
+          tabIndex='0'
           onClick={() => handleClick(restaurant)}>
           {restaurant.title}
         </li>
