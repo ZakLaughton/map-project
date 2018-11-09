@@ -4,10 +4,10 @@
   "private": true,
   "homepage": "https://map.zaklaughton.com/",
   "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
     "react-google-maps": "^9.4.5",
-    "react-scripts": "1.1.5"
+    "react-scripts": "^2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
